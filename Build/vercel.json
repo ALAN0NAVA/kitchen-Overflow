@@ -1,10 +1,21 @@
 {
+  "build": {
+    "command": null,
+    "publish": "."
+  },
   "headers": [
+    {
+      "source": "/Build/(.*)",
+      "headers": [
+        { "key": "Content-Encoding", "value": "gzip" }
+      ]
+    },
     {
       "source": "/Build/(.*)\\.framework\\.js\\.gz",
       "headers": [
         { "key": "Content-Type", "value": "application/javascript" },
-        { "key": "Content-Encoding", "value": "gzip" }
+        { "key": "Content-Encoding", "value": "gzip" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     },
     {
