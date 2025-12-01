@@ -1,6 +1,12 @@
 {
-  "version": 2,
   "headers": [
+    {
+      "source": "/Build/(.*)\\.framework\\.js\\.gz",
+      "headers": [
+        { "key": "Content-Type", "value": "application/javascript" },
+        { "key": "Content-Encoding", "value": "gzip" }
+      ]
+    },
     {
       "source": "/Build/(.*)\\.js\\.gz",
       "headers": [
@@ -19,13 +25,6 @@
       "source": "/Build/(.*)\\.data\\.gz",
       "headers": [
         { "key": "Content-Type", "value": "application/octet-stream" },
-        { "key": "Content-Encoding", "value": "gzip" }
-      ]
-    },
-    {
-      "source": "/Build/(.*)\\.framework\\.js\\.gz",
-      "headers": [
-        { "key": "Content-Type", "value": "application/javascript" },
         { "key": "Content-Encoding", "value": "gzip" }
       ]
     }
